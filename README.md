@@ -1,2 +1,4 @@
-# SJTU OJ
-save the problems I solved on sjtu online judge.
+# Learning Algorithm
+- Online Judge @ SJTU
+- Notes and Homework for SE121 Algorithm Implement
+- Leetcode
