@@ -101,7 +101,9 @@ void DijkstraProject2::pathHelper(int v, vector<vector<int>> prev, vector<int>& 
 		for (auto iter = path.rbegin(); iter != path.rend(); iter++) {
 			tmp += ("," + to_string(*iter));
 		}
-		paths.push_back(tmp);
+		if (find(paths.begin(), paths.end(), tmp) == paths.end()) {
+			paths.push_back(tmp);
+		}		
 		return;
 	}
 	path.push_back(v);
@@ -158,6 +160,50 @@ void DijkstraProject2::run2(const char* outputFile)
 		}
 	}
 
+	for (auto& v : G)
+		sort(v.begin(), v.end(), [&](ENode a, ENode b) {
+		return a.weight < b.weight;
+	});
+
+	vector<int> pos2(n, 0);
+	vector<int> dist2(n, INT_MAX);
+	vector<vector<int>> prev2(n);
+	queue<QEntry> pq2;
+	pos2[0] = G[0].size();
+	dist2[0] = 0;
+	prev2[0].push_back(-1);
+	for (auto enode : G[0]) {
+		dist2[enode.v] = enode.weight;
+		prev2[enode.v].push_back(0);
+		pq2.push(QEntry(enode.weight, enode.v));
+	}
+
+	while (!pq2.empty()) {
+		auto entry = pq2.front();
+		pq2.pop();
+		auto from = entry.node;
+		if (pos2[from] >= G[from].size())
+			continue;
+		auto prev_w = entry.prev_wt;
+		auto to = G[from][pos2[from]].v;
+		auto cur_w = G[from][pos2[from]].weight;
+
+		while (pos2[from] < G[from].size() && (cur_w = G[from][pos2[from]].weight) < prev_w) {
+			to = G[from][pos2[from]].v;
+			if (dist2[to] > dist2[from] + cur_w) {
+				dist2[to] = dist2[from] + cur_w;
+				prev2[to].clear();
+				prev2[to].push_back(from);
+				pq2.push(QEntry(cur_w, to));
+			}
+			else if (dist2[to] == dist2[from] + cur_w) {
+				prev2[to].push_back(from);
+				pq2.push(QEntry(cur_w, to));
+			}
+			pos2[from]++;
+		}
+	}
+
 	ofstream out(outputFile, ios::app);
 	if (!out) {
 		cerr << "fail to open file" << endl;
@@ -165,9 +211,27 @@ void DijkstraProject2::run2(const char* outputFile)
 	}
 	vector<int> path;
 	vector<string> paths;
-	pathHelper(n - 1, prev, path, paths);
+	if (prev2[n - 1].empty() && prev[n - 1].empty()) {
+		out << "not exsit\n" <<  0 << "\n" << "end\n\n";
+		out.close();
+		std::cout << "Save result to file:" << outputFile << std::endl;
+		return;
+	}
+	else if (dist[n - 1] < dist2[n - 1] && !prev[n - 1].empty() || prev2[n-1].empty()) {
+		out << dist[n - 1] << "\n";
+		pathHelper(n - 1, prev, path, paths);
+	}
+	else if (dist[n - 1] > dist2[n - 1] && !prev2[n - 1].empty() || prev[n - 1].empty()) {
+		out << dist2[n - 1] << "\n";
+		pathHelper(n - 1, prev2, path, paths);
+	}
+	else {
+		out << dist[n - 1] << "\n";
+		pathHelper(n - 1, prev, path, paths);
+		path.clear();
+		pathHelper(n - 1, prev2, path, paths);
+	}
 
-	out << dist[n - 1] << "\n";
 	out << paths.size() << "\n";
 	for (auto s : paths) out << s << "\n";
 	out << "end\n\n";
