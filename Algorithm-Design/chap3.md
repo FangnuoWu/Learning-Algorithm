@@ -2,7 +2,7 @@
 
 #### 3-2
 
-<img src=".\image\image-20200424231638649.png" alt="image-20200424231638649" style="zoom: 50%;" />
+<img src="https://gitee.com/fangnuowu/img/raw/master///20200509223610.png" alt="image-20200424231638649" style="zoom: 50%;" />
 
 **answer：**
 
@@ -14,7 +14,7 @@
 
 #### 3-7
 
-<img src=".\image\image-20200425104054736.png" alt="image-20200425104054736" style="zoom:55%;" />
+<img src="https://gitee.com/fangnuowu/img/raw/master///20200509223611.png" alt="image-20200425104054736" style="zoom:55%;" />
 
 **answer：**
 
@@ -24,7 +24,7 @@ The claim is true.
 
 #### 3-9
 
-<img src=".\image\image-20200425105615065.png" alt="image-20200425105615065" style="zoom: 55%;" />
+<img src="https://gitee.com/fangnuowu/img/raw/master///20200509223612.png" alt="image-20200425105615065" style="zoom: 55%;" />
 
 **answer：**
 

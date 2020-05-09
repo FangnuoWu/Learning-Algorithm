@@ -16,4 +16,4 @@
 
 调整过程：
 
-![image-20200426140315005](.\image\image-20200426140315005.png)
+![image-20200426140315005](https://gitee.com/fangnuowu/img/raw/master///20200509223300.png)

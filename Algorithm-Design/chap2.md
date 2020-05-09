@@ -120,7 +120,7 @@ $\Rightarrow f(n)^{2} = O\left(g(n)^{2}\right)$
 
 Here’s a simple algorithm to solve this problem.
 
-![image-20200417211454459](.\image\image-20200417211454459.png)
+![image-20200417211454459](https://gitee.com/fangnuowu/img/raw/master///20200509223547.png)
 
 (a) For some function $f$ that you should choose, give a bound of the form $O(f(n))$ on the running time of this algorithm on an input of size n (i.e., a bound on the number of operations performed by the algorithm). 
 

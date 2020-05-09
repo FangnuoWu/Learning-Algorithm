@@ -8,20 +8,20 @@
 
    - 树：
 
-   ![image-20200319153602116](.\image\image-20200319153602116.png)
+   ![image-20200319153602116](https://gitee.com/fangnuowu/img/raw/master///20200509223324.png)
 
 2. 编写一段程序，统计一个红黑树中红色结点所占比例。对于$N=10^4$, $10^5$, $10^6$，各自随机生成100个大小为N的红黑树并统计红色结点的比例，并以图的形式表示出来，最后给出你对红黑树中红色结点所占比例取值范围的猜想。注意：对于每个N的取值请画一张散点图，Y轴为红色结点所占比例，X轴为1~100表示每棵树（这100棵树按照Y值递增顺序排序）。无需贴代码。
 
    - $N=10^4$
 
-   <img src=".\image\4.png" style="zoom: 25%;" />
+   <img src="https://gitee.com/fangnuowu/img/raw/master///20200509223330.png" style="zoom: 25%;" />
 
    - $N = 10^5$
 
-   <img src=".\image\5.png" style="zoom:25%;" />
+   <img src="https://gitee.com/fangnuowu/img/raw/master///20200509223339.png" style="zoom:25%;" />
 
    - $N = 10^6$
 
-   <img src=".\image\6.png" style="zoom:25%;" />
+   <img src="https://gitee.com/fangnuowu/img/raw/master///20200509223333.png" style="zoom:25%;" />
 
 猜想: 本次实验红色结点所占比例的取值平均值为48.657%，最大为49.25%，最小为47.99%，方差为0.000636，猜测红色结点占比范围主要集中在47%-50%。

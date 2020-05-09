@@ -9,7 +9,7 @@ Decide whether you think the following statement is true or false. If it is true
 
 false. counterexample: 
 
-<img src=".\image\image-20200417222417992.png" alt="image-20200417222417992" style="zoom:50%;" />
+<img src="https://gitee.com/fangnuowu/img/raw/master///20200509223530.png" alt="image-20200417222417992" style="zoom:50%;" />
 
 ### 1-2
 
@@ -38,5 +38,5 @@ The analogue of Gale and Shapley’s question for this kind of stability is the 
 
 **answer:**
 
-![image-20200418124727725](.\image\image-20200418124727725.png)
+![image-20200418124727725](https://gitee.com/fangnuowu/img/raw/master///20200509223531.png)
 
